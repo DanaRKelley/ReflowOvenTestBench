@@ -1,0 +1,33 @@
+When the Arduino is reset or powers up the program starts 
+with sending these text messages below
+
+Reflow Oven Test Bench
+How This Works
+
+Send Oven a Serial ASCII Command to execute a Test
+Commands: are one or two letter commands
+
+'R' - reset oven, oven returns text response 'OVEN RESET'
+	  followed by 'D,COOL' then after a few seconds 'D,READY'
+	  COOL and READY are displayed in Display Phase icon
+
+'S' - start oven, oven returns 'D,WARMING'
+	  followed by 'D,SOAK', 'D,RAMP', 'D,REFLOW', 'D,COOL', 'D,DONE'
+	  each phase will take a few seconds while sending plot data
+	  data format: 'T,int,int,int,int' representing time in SECONDS, 
+	  and SIDE, FRONT, GOAL temperatures
+	  
+	  the oven if too warm on startup will first enter a cooling cycle.
+	  in this even a 'D,COOL' is returned while it cools down 
+	  
+'C' - toggle oven cooling fan,'C,COOL ON' or 'C,COOL OFF'
+	  display 'COOL ON or OFF' in Display Phase icon
+	  it does not impact oven operations
+
+'P0, P1, P2, or P3' - oven returns 'P,PROFILE NAME'
+
+'SP' - send profile name
+
+'SS' - send the entire system stat including any save graphics temperature data
+
+Ready, Set,..... GO!
