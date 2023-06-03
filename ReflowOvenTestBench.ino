@@ -14,7 +14,7 @@ static byte gtempArray [graphArrayDepth];
 static int profile_index = 0;	// defaults to profile 0
 
 char *profileStrings[] = {
-	"PROFILE A", "PROFILE B", "PROFILE C", "PROFILE D", "ILLEGAL PROFILE NUMBER"
+	"P,PROFILE A", "P,PROFILE B", "P,PROFILE C", "P,PROFILE D", "P,ILLEGAL PROFILE NUMBER"
 };
 
 char *ovenPhase[] = {"D,WARMING"};
