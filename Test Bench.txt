@@ -26,7 +26,7 @@ Commands: are one or two letter commands
 
 'P0, P1, P2, or P3' - oven returns 'P,PROFILE NAME'
 
-'SP' - send profile name
+'SP' - send profile names 'P0,PROFILE NAME' for each profile with CR
 
 'SS' - send the entire system stat including any save graphics temperature data
 
