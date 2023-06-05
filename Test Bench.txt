@@ -24,7 +24,7 @@ Commands: are one or two letter commands
 	  display 'COOL ON or OFF' in Display Phase icon
 	  it does not impact oven operations
 
-'P0, P1, P2, or P3' - oven returns 'P,PROFILE NAME'
+'P0, P1, P2, or P3' - oven returns 'Pn,PROFILE NAME', where n is the profile index
 
 'SP' - send profile names 'P0,PROFILE NAME' for each profile with CR
 

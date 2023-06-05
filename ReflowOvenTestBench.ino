@@ -13,8 +13,10 @@ static byte gtempArray [graphArrayDepth];
 
 static int profile_index = 0;	// defaults to profile 0
 
+const int PROFILENAMEDEPTH = 4;
+
 char *profileStrings[] = {
-	"P,PROFILE A", "P,PROFILE B", "P,PROFILE C", "P,PROFILE D", "P,ILLEGAL PROFILE NUMBER"
+	"P0,PROFILE A", "P1,PROFILE B", "P2,PROFILE C", "P3,PROFILE D", "P4,ILLEGAL PROFILE NUMBER"
 };
 
 char *ovenPhase[] = {"D,WARMING"};
@@ -64,8 +66,10 @@ void loop() {
 				calcTemperature(&goalTemp, ovenTimeSeconds, true);
 				initArrays();
 			} else {
-				if (inByte2 == 'P') { // send profile name
-					Serial.println(profileStrings[profile_index]);
+				if (inByte2 == 'P') { // send all profile names
+					for ( profile_index = 0; profile_index < PROFILENAMEDEPTH; profile_index++) {
+						Serial.println(profileStrings[profile_index]);
+					}
 				} else if (inByte2 == 'S') { // send oven state
 					//Serial.println("oven state");
 					printOvenState();
